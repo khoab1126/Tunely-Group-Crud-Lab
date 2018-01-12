@@ -8,9 +8,10 @@ var path = require('path');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var findOrCreate = require('mongoose-findorcreate');
+var router = express.Router();
 // generate a new express app and call it 'app'
 var app = express();
-
+db = require('./models');
 // serve static files from public folder
 app.use(express.static(__dirname + '/public'));
 
@@ -75,17 +76,33 @@ app.get('/', function homepage (req, res) {
  * JSON API Endpoints
  */
 
-app.get('/api', function api_index (req, res){
-  res.json({
-    message: "Welcome to tunely!",
-    documentation_url: "https://github.com/tgaff/tunely/api.md",
-    base_url: "http://tunely.herokuapp.com",
-    endpoints: [
-      {method: "GET", path: "/api", description: "Describes available endpoints"}
-    ]
+app.get('/api/albums', function api_index (req, res){
+  db.Album.find(function (err, albums) {
+    if (err) {
+      console.log('index error:' + err);
+      res.sendStatus(500);
+    }
+    res.json(albums);
   });
 });
+//get one album
+app.get('/api/:id', function (req, res) {
+  //get album id from params
+  let albumId = req.params.id;
 
+  db.Album.find(function (err, albums) {
+    if (err) {
+      console.log('index error:' + error);
+      res.sendStatus(500);
+    }
+    for (var i = 0; i < albums.length; i++) {
+      if (albums[i]._id == albumId) {
+        res.json(albums[i]);
+        break;
+      }
+    }
+  });
+});
 /**********
  * SERVER *
  **********/

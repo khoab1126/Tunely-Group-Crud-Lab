@@ -4,10 +4,20 @@
 var db = require("./models");
 
 var albumsList =[
+  {
+    artistName: 'Led Zeppelin',
+    name: 'Led Zeppelin IV',
+    releaseDate: 'November 8, 1971',
+    genres: ['Rock', 'Metal']
+  }
   // put data here!
 ];
 
 db.Album.remove({}, function(err, albums){
+  if(err) {
+    console.log('Error occurred in remove', err);
+  } else {
+    console.log('removed all albums');
 
   db.Album.create(albumsList, function(err, albums){
     if (err) { return console.log('ERROR', err); }
@@ -15,5 +25,5 @@ db.Album.remove({}, function(err, albums){
     console.log("created", albums.length, "albums");
     process.exit();
   });
-
+}
 });
