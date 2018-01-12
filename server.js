@@ -2,10 +2,23 @@
 
 //require express in our app
 var express = require('express');
+// require dependencies
+var logger = require('morgan');
+var path = require('path');
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
+var findOrCreate = require('mongoose-findorcreate');
 // generate a new express app and call it 'app'
 var app = express();
 
 // serve static files from public folder
+app.use(express.static(__dirname + '/public'));
+
+// middleware
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
 
 /************
