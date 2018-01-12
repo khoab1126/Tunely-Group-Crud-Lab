@@ -43,7 +43,9 @@ sampleAlbums.push({
 
 $(document).ready(function() {
   console.log('app.js loaded!');
-sampleAlbums.forEach(renderAlbum)
+// sampleAlbums.forEach(renderAlbum)////got rid of because it was rendering all albums multiple times, for a total of
+//16 albums instead of 4
+renderAlbum(sampleAlbums)
 })
 
 
@@ -55,7 +57,7 @@ function renderAlbum(album) {
   for (let i = 0; i < sampleAlbums.length; i++) {
   var albumHtml =
   "        <!-- one album -->" +
-  "        <div class='row album' data-album-id='" + "HARDCODED ALBUM ID" + "'>" +
+  // "        <div class='row album' data-album-id='" + "HARDCODED ALBUM ID" + "'>" +
   "          <div class='col-md-10 col-md-offset-1'>" +
   "            <div class='panel panel-default'>" +
   "              <div class='panel-body'>" +
