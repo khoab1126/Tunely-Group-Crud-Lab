@@ -1,10 +1,14 @@
+/* Mod A, Sprint 1
+-edit the function renderAlbum to display one Album on the page. You should use HTML just like what you just deleted.
+-Build-up the HTML string and use jQuery to render it on the page. */
+
+
 /* CLIENT-SIDE JS
  *
  * You may edit this file as you see fit.  Try to separate different components
  * into functions and objects as needed.
  *
  */
-
 
 /* hard-coded data! */
 var sampleAlbums = [];
@@ -39,8 +43,8 @@ sampleAlbums.push({
 
 $(document).ready(function() {
   console.log('app.js loaded!');
-});
-
+sampleAlbums.forEach(renderAlbum)
+})
 
 
 
@@ -48,7 +52,7 @@ $(document).ready(function() {
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
   console.log('rendering album:', album);
-
+  for (let i = 0; i < sampleAlbums.length; i++) {
   var albumHtml =
   "        <!-- one album -->" +
   "        <div class='row album' data-album-id='" + "HARDCODED ALBUM ID" + "'>" +
@@ -64,15 +68,15 @@ function renderAlbum(album) {
   "                    <ul class='list-group'>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Album Name:</h4>" +
-  "                        <span class='album-name'>" + "HARDCODED ALBUM NAME" + "</span>" +
+  "                        <span class='album-name'>" + sampleAlbums[i].name + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Artist Name:</h4>" +
-  "                        <span class='artist-name'>" + "HARDCODED ARTIST NAME" + "</span>" +
+  "                        <span class='artist-name'>" + sampleAlbums[i].artistName + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Released date:</h4>" +
-  "                        <span class='album-releaseDate'>" + "HARDCODED RELEASE DATE" + "</span>" +
+  "                        <span class='album-releaseDate'>" + sampleAlbums[i].releaseDate + "</span>" +
   "                      </li>" +
   "                    </ul>" +
   "                  </div>" +
@@ -89,4 +93,6 @@ function renderAlbum(album) {
   "          <!-- end one album -->";
 
   // render to the page with jQuery
+  $('#albums').append(albumHtml);
+}
 }
