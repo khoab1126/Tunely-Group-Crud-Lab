@@ -2,15 +2,21 @@
 // simply run: `node seed.js` from the root of this project folder.
 
 var db = require("./models");
-
+  // put data here!
 var albumsList =[
   {
     artistName: 'Led Zeppelin',
     name: 'Led Zeppelin IV',
     releaseDate: 'November 8, 1971',
     genres: ['Rock', 'Metal']
+  },
+  {
+    artistName: 'NoBunny',
+    name: 'First Blood',
+    releaseDate: 'September 21, 2010',
+    genres: ['Garage Rock, Punk Rock, Power Pop']
   }
-  // put data here!
+
 ];
 
 db.Album.remove({}, function(err, albums){
