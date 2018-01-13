@@ -9,6 +9,11 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var findOrCreate = require('mongoose-findorcreate');
 var router = express.Router();
+
+
+
+
+
 // generate a new express app and call it 'app'
 var app = express();
 db = require('./models');
@@ -110,5 +115,5 @@ app.get('/api/:id', function (req, res) {
 
 // listen on port 3000
 app.listen(process.env.PORT || 3000, function () {
-  console.log('Express server is running on http://localhost:3000/');
+  console.log('---Express server is running on http://localhost:3000/---');
 });
