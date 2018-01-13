@@ -26,6 +26,7 @@ app.use(express.static(__dirname + '/public'));
  * DATABASE *
  ************/
 
+
 /* hard-coded data */
 var albums = [];
 albums.push({
