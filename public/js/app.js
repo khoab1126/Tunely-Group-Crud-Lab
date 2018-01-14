@@ -100,6 +100,7 @@ function renderAlbum(album) {
 }
 }
   // capture form values
-  $('#singlebutton').submit(function (event) {
-    console.log($('#albumname').val());
-  })
+  const captureValues = () => {
+    var vals = $( 'form' ).serialize();
+    console.log(vals);
+  }

@@ -91,6 +91,16 @@ app.get('/api/albums', function api_index (req, res){
     res.json(albums);
   });
 });
+// post
+// app.post('/api/albums', function (req, res) {
+//   db.Album.find(function (err, albums) {
+//     if (err) {
+//       console.log('index error:' + err);
+//       res.sendStatus(500);
+//     }
+//     res.json(albums);
+//   });
+// });
 //get one album
 app.get('/api/:id', function (req, res) {
   //get album id from params
@@ -109,6 +119,7 @@ app.get('/api/:id', function (req, res) {
     }
   });
 });
+
 /**********
  * SERVER *
  **********/
