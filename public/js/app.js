@@ -1,3 +1,8 @@
+/* Mod A, Sprint 1
+-edit the function renderAlbum to display one Album on the page. You should use HTML just like what you just deleted.
+-Build-up the HTML string and use jQuery to render it on the page. */
+
+
 /* CLIENT-SIDE JS
  *
  * You may edit this file as you see fit.  Try to separate different components
@@ -5,20 +10,19 @@
  *
  */
 
-
 /* hard-coded data! */
 var sampleAlbums = [];
 sampleAlbums.push({
-             artistName: 'Ladyhawke',
-             name: 'Ladyhawke',
-             releaseDate: '2008, November 18',
-             genres: [ 'new wave', 'indie rock', 'synth pop' ]
+            artistName: 'Led Zeppelin',
+            name: 'Led Zeppelin IV',
+            releaseDate: 'November 8, 1971',
+            genres: ['Rock', 'Metal']
            });
 sampleAlbums.push({
-             artistName: 'The Knife',
-             name: 'Silent Shout',
-             releaseDate: '2006, February 17',
-             genres: [ 'synth pop', 'electronica', 'experimental' ]
+            artistName: 'NoBunny',
+            name: 'First Blood',
+            releaseDate: 'September 21, 2010',
+            genres: ['Garage Rock, Punk Rock, Power Pop']
            });
 sampleAlbums.push({
              artistName: 'Juno Reactor',
@@ -39,8 +43,10 @@ sampleAlbums.push({
 
 $(document).ready(function() {
   console.log('app.js loaded!');
-});
-
+// sampleAlbums.forEach(renderAlbum)////got rid of because it was rendering all albums multiple times, for a total of
+//16 albums instead of 4
+renderAlbum(sampleAlbums)
+})
 
 
 
@@ -48,10 +54,10 @@ $(document).ready(function() {
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
   console.log('rendering album:', album);
-
+  for (let i = 0; i < sampleAlbums.length; i++) {
   var albumHtml =
   "        <!-- one album -->" +
-  "        <div class='row album' data-album-id='" + "HARDCODED ALBUM ID" + "'>" +
+  // "        <div class='row album' data-album-id='" + "HARDCODED ALBUM ID" + "'>" +
   "          <div class='col-md-10 col-md-offset-1'>" +
   "            <div class='panel panel-default'>" +
   "              <div class='panel-body'>" +
@@ -64,15 +70,15 @@ function renderAlbum(album) {
   "                    <ul class='list-group'>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Album Name:</h4>" +
-  "                        <span class='album-name'>" + "HARDCODED ALBUM NAME" + "</span>" +
+  "                        <span class='album-name'>" + sampleAlbums[i].name + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Artist Name:</h4>" +
-  "                        <span class='artist-name'>" + "HARDCODED ARTIST NAME" + "</span>" +
+  "                        <span class='artist-name'>" + sampleAlbums[i].artistName + "</span>" +
   "                      </li>" +
   "                      <li class='list-group-item'>" +
   "                        <h4 class='inline-header'>Released date:</h4>" +
-  "                        <span class='album-releaseDate'>" + "HARDCODED RELEASE DATE" + "</span>" +
+  "                        <span class='album-releaseDate'>" + sampleAlbums[i].releaseDate + "</span>" +
   "                      </li>" +
   "                    </ul>" +
   "                  </div>" +
@@ -89,6 +95,8 @@ function renderAlbum(album) {
   "          <!-- end one album -->";
 
   // render to the page with jQuery
+  $('#albums').append(albumHtml);
+}
 }
 
 //Start my part with JQuery to get value of input
