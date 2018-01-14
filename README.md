@@ -1,14 +1,14 @@
 ![GA Cog](https://camo.githubusercontent.com/6ce15b81c1f06d716d753a61f5db22375fa684da/68747470733a2f2f67612d646173682e73332e616d617a6f6e6177732e636f6d2f70726f64756374696f6e2f6173736574732f6c6f676f2d39663838616536633963333837313639306533333238306663663535376633332e706e67)
 # Welcome to Tunely lab
 
-This is a Full CRUD project using Express 
+This is a Full CRUD project using Express
 - For this lab we'll be working in teams!
  * Standby for further intruction from your instructors as to which team you'll be joining.
  * Be prepared to have a remote teammate _This is also very real-world like too_
 
 Prerequisites:
 * jQuery, AJAX
-* Express server, static assets
+* Express server static assets
 * RESTful design
 * JSON serving /api routes
 * Bootstrap - the lab will introduce modals
@@ -30,7 +30,7 @@ This lab begins with a basic front-end to display a list of music albums.  As we
 
 ### On Working in Groups
 
-Refer to [this markdown file](https://git.generalassemb.ly/WDIplus-ATX/Tunely-Lab/blob/master/working-in-a-group.md) for advice on how to work in a group. 
+Refer to [this markdown file](https://git.generalassemb.ly/WDIplus-ATX/Tunely-Lab/blob/master/working-in-a-group.md) for advice on how to work in a group.
 
 ### Project Planning
 
@@ -89,13 +89,13 @@ In the above you can see we're building a site that displays a list of musical a
 
 ### Module C: Full CRUD with Mongo and embedded relationships.
 
-Use what we learned this week to create a relationship between Albums and Songs! Update your routes accordingly. 
+Use what we learned this week to create a relationship between Albums and Songs! Update your routes accordingly.
 
 ### Bonus:
 
 - Style the heck out of this. Make you group's the most beautiful of all!
-- Make it responsive, so it looks beautiful on your phone. 
+- Make it responsive, so it looks beautiful on your phone.
 - Add new features, let your imagination run wild!
 
-### Extra Bonus: 
+### Extra Bonus:
 - Add OAuth!
