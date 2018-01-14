@@ -1,6 +1,6 @@
 /* Mod A, Sprint 1
 -edit the function renderAlbum to display one Album on the page. You should use HTML just like what you just deleted.
--Build-up the HTML string and use jQuery to render it on the page. */
+-Build-up the HTML string and use jQuery to render it onto the page. */
 
 
 /* CLIENT-SIDE JS
