@@ -96,5 +96,10 @@ function renderAlbum(album) {
 
   // render to the page with jQuery
   $('#albums').append(albumHtml);
+
 }
 }
+  // capture form values
+  $('#singlebutton').submit(function (event) {
+    console.log($('#albumname').val());
+  })
