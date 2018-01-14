@@ -7,11 +7,7 @@
  *
  * You may edit this file as you see fit.  Try to separate different components
  * into functions and objects as needed.
-<<<<<<< HEAD
 
-=======
-
->>>>>>> 7d2175e24a1025d9fe8ef5c138dbcc238a319480
  */
 
 /* hard-coded data! */
@@ -46,6 +42,7 @@ sampleAlbums.push({
 
 
 $(document).ready(function() {
+
   console.log('app.js loaded!');
 // sampleAlbums.forEach(renderAlbum)////got rid of because it was rendering all albums multiple times, for a total of
 //16 albums instead of 4
@@ -100,5 +97,10 @@ function renderAlbum(album) {
 
   // render to the page with jQuery
   $('#albums').append(albumHtml);
+
 }
 }
+  // capture form values
+  $('#singlebutton').submit(function (event) {
+    console.log($('#albumname').val());
+  })
