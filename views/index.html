@@ -8,14 +8,7 @@
 
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- VENDOR SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-    <!-- APPLICATION SCRIPTS -->
-    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="../public/css/styles.css">
   </head>
   <body>
     <div class="jumbotron">
@@ -98,7 +91,7 @@
             <div class="form-group">
               <label class="col-md-4 control-label" for="name">Album Name</label>
               <div class="col-md-4">
-              <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
+              <input id="albumName" name="albumName" type="text" placeholder="" class="form-control input-md" required="">
 
               </div>
             </div>
@@ -132,9 +125,9 @@
 
             <!-- Button -->
             <div class="form-group">
-              <label class="col-md-4 control-label" for="singlebutton">Save Album</label>
+              <label class="col-md-4 control-label" for="singleButton">Save Album</label>
               <div class="col-md-4">
-                <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                <button id="singleButton" name="singlebutton" class="btn btn-primary">Submit</button>
               </div>
             </div>
           </fieldset>
@@ -191,6 +184,11 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
+    <!-- VENDOR SCRIPTS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
+    <!-- APPLICATION SCRIPTS -->
+      <script src="../public/js/app.js"></script>
   </body>
 </html>
