@@ -2,27 +2,27 @@
 -edit the function renderAlbum to display one Album on the page. You should use HTML just like what you just deleted.
 -Build-up the HTML string and use jQuery to render it onto the page. */
 
-
+///////
 /* CLIENT-SIDE JS
  *
  * You may edit this file as you see fit.  Try to separate different components
  * into functions and objects as needed.
- *
+
  */
 
 /* hard-coded data! */
 var sampleAlbums = [];
 sampleAlbums.push({
-             artistName: 'Ladyhawke',
-             name: 'Ladyhawke',
-             releaseDate: '2008, November 18',
-             genres: [ 'new wave', 'indie rock', 'synth pop' ]
+            artistName: 'Led Zeppelin',
+            name: 'Led Zeppelin IV',
+            releaseDate: 'November 8, 1971',
+            genres: ['Rock', 'Metal']
            });
 sampleAlbums.push({
-             artistName: 'The Knife',
-             name: 'Silent Shout',
-             releaseDate: '2006, February 17',
-             genres: [ 'synth pop', 'electronica', 'experimental' ]
+            artistName: 'NoBunny',
+            name: 'First Blood',
+            releaseDate: 'September 21, 2010',
+            genres: ['Garage Rock, Punk Rock, Power Pop']
            });
 sampleAlbums.push({
              artistName: 'Juno Reactor',
