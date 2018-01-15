@@ -50,13 +50,13 @@ renderAlbum(sampleAlbums)
 
 //////////MUCHO help from Lily. Could not have done this without her
 $('#addNewAlbum').on('submit', (e) => { //event handler for button
-  e.preventDefault();
+  e.preventDefault(); //prevent default action of event from being triggered
   $.ajax({
     method: 'POST',
-    url: '/api/albums',
-    data: {
+    url: '/api/albums', //what allows the ajax and post to communicate
+    data: { //data is the "body" that Req.body refers to on server file
       name: e.currentTarget["1"].value,
-      artistName: e.currentTarget["2"].value,   //data is the "body" that Req.body refers to on server file
+      artistName: e.currentTarget["2"].value,   /
       releaseDate: e.currentTarget["3"].value,
       genres: e.currentTarget["4"].value.split(',')
     },
