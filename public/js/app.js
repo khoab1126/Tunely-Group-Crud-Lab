@@ -42,16 +42,36 @@ sampleAlbums.push({
 
 
 $(document).ready(function() {
-
   console.log('app.js loaded!');
 // sampleAlbums.forEach(renderAlbum)////got rid of because it was rendering all albums multiple times, for a total of
 //16 albums instead of 4
 renderAlbum(sampleAlbums)
 })
 
+//////////MUCHO help from Lily. Could not have done this without her
+$('#addNewAlbum').on('submit', (e) => { //event handler for button
+  e.preventDefault();
+  $.ajax({
+    method: 'POST',
+    url: '/api/albums',
+    data: {
+      name: e.currentTarget["1"].value,
+      artistName: e.currentTarget["2"].value,   //data is the "body" that Req.body refers to on server file
+      releaseDate: e.currentTarget["3"].value,
+      genres: e.currentTarget["4"].value.split(',')
+    },
+    success: newAlbumSuccess,  //called from functions below
+    error: newAlbumError
+  });
+});
+const newAlbumSuccess = (json)=>{  //renders json format
+      $('#myform')[0].reset();  //resets the form to blank inputs
+      allAlbums.push(json); //new album pushed to allAlbums array as json
+}
 
-
-
+const newAlbumError = ()=> {
+     console.log('Error, try again')
+}
 // this function takes a single album and renders it to the page
 function renderAlbum(album) {
   console.log('rendering album:', album);
@@ -100,7 +120,11 @@ function renderAlbum(album) {
 
 }
 }
+
+
+
   // capture form values
-  $('#singlebutton').submit(function (event) {
-    console.log($('#albumname').val());
-  })
+  const captureValues = () => {
+     var vals = $( 'form' ).serialize();
+    console.log(vals);
+  }

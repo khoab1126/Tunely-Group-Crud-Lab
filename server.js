@@ -91,6 +91,23 @@ app.get('/api/albums', function api_index (req, res){
     res.json(albums);
   });
 });
+
+
+/////////////////////////////////////
+app.post('/api/albums', (req, res) => {
+  let album = new db.Album(req.body);
+  album.save((err, createdAlbumObject) => {  //.save, saves the info
+    if (err) {
+        response.status(500).send(err);
+    }                                        //numeric codes that tie in with the success and error in ajax
+    response.status(200).send(createdAlbumObject);
+  });
+})
+/////////////////////////////////////
+
+
+
+
 //get one album
 app.get('/api/:id', function (req, res) {
   //get album id from params
@@ -109,6 +126,7 @@ app.get('/api/:id', function (req, res) {
     }
   });
 });
+
 /**********
  * SERVER *
  **********/
